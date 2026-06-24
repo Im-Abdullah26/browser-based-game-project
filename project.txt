@@ -1,1 +1,16 @@
+The choosen game is: Concentration (memory game)
 
+the possible variables, data structures, and functions that could be used:
+
+
+As a player, I want to... 
+
+1. I want a Start the game with the board is generated and the cards are shuffled randomly. 
+2.  I want to Click a card reveal its icon 
+3.  I want to reveal two cards at once So that I can compare them to see if they match. 
+4.  I want the cards to stay visible if they match
+So that I know I have successfully found a pair 
+5.  I want to the cards to flip back if they DON'T match, So that I can keep playing. 
+6.  I want to See my move count, So that I can track my performance. 
+7. I want to get held accountable either by getting certain amount of guesses or certain amount of time 
+8.  I want Know see my final score. So that i know if i won or lost

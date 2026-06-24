@@ -1,7 +1,22 @@
 The choosen game is: Concentration (memory game)
 
 the possible variables, data structures, and functions that could be used:
-
+• function() ... =>
+• document.querySelector(' ') 
+•  document.getElement('')
+• document.createElement
+• element.classList.add
+• element.textContent
+• element.addEventListener('click', function).
+• Array of Objects 
+if...else
+for...for each
+return statement
+Const
+Let
+pop()
+Push (
+and so on
 
 As a player, I want to... 
 

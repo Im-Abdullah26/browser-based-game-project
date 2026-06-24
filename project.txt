@@ -1,22 +1,27 @@
 The choosen game is: Concentration (memory game)
 
-the possible variables, data structures, and functions that could be used:
-• function() ... =>
-• document.querySelector(' ') 
-•  document.getElement('')
-• document.createElement
-• element.classList.add
-• element.textContent
-• element.addEventListener('click', function).
-• Array of Objects 
-if...else
-for...for each
-return statement
-Const
-Let
-pop()
-Push (
-and so on
+• Choose a theme for the game. 
+
+• Create 16 cards with 8 matching pairs of images.
+
+• Set the timer to 60 seconds. 
+
+• Set the maximum number of wrong guesses. 
+
+• Shuffle the cards randomly. 
+
+• Flip the card to show its image. 
+
+• If it is the second card selected 
+
+• Check if the two cards match. 
+
+• If the cards match mark both cards as matched and keep them visible. 
+
+• If the cards do not match flip both cards back over. 
+
+• Show the message: Game Over! You lost or won.
+
 
 As a player, I want to... 
 

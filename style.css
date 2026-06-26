@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(246, 151, 255);
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-top: 85PX;
+    margin-left: 55PX;
+    
+}
+
+button{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    border-radius: 50PX;
+    padding: 15PX 40px;
+    margin-left: 50PX;
+}

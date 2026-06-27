@@ -1,19 +1,24 @@
 body {
-    background-color: rgb(246, 151, 255);
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-    margin-top: 50PX;
-    margin-left: 55PX;
-    
+    color: #333;
 }
 
-button{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
-    border-radius: 50PX;
-    padding: 15PX 40px;
-    margin-left: 50PX;
+#game-board {
+    width: 400px;
+    height: 400px;
+    border: 3px solid black;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    background-color: royalblue;
 }

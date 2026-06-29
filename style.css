@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     display: flex;           /*come back on this*/
     flex-direction: column;  /*come back on this*/
     align-items: center;     /*come back on this*/
@@ -17,7 +16,9 @@ h1 {
     border: 3px solid black;
     margin: 20px auto; /*come back on this*/
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /*come back on this*/
+    grid-template-columns: repeat(4, 1fr); /* repeat (4,..) just means doing the same thing four times
+                                            and 1fr just means it takes 1 fraction of the space
+                                            so they are equally spaced*/
     gap: 10px;
     padding: 10px;
 }
@@ -27,7 +28,7 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s; /*come back on this*/
-     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /*come back on this*/
+     box-shadow: 0 8px 8px rgba(0,0,0,0.2); /*come back on this*/
 }
 
 .card:hover {

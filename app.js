@@ -1,19 +1,42 @@
-const gameBoard = document.getElementById("game-board");
 
-for (let i = 1; i <= 16; i++) {
+const emojis = [
+    "😀", "😀",
+    "😎", "😎",
+    "🍎", "🍎",
+    "⭐", "⭐",
+    "🐶", "🐶",
+    "🚗", "🚗",
+    "⚽", "⚽",
+    "🍕", "🍕"
+]
 
-    const card = document.createElement("div");
 
-    card.className = "card";
+const gameBoard = document.getElementById("game-board")
 
-    card.addEventListener("click", function () {
+for (let i = 0; i < 16; i++) {
 
-        card.textContent = "⭐"
+    const card = document.createElement("div")
 
-        card.style.backgroundColor =  "yellow"
+    card.className = "card"
 
-    });
+    card.textContent = emojis[i]
 
-    gameBoard.appendChild(card);
+    gameBoard.appendChild(card)
+
 
 }
+
+
+
+for (let i = 0; i < 16; i++) { //suffle loop//
+
+    let randomIndex = Math.floor(Math.random() * emojis.length);
+
+    let temp = emojis[i]
+
+    emojis[i] = emojis[randomIndex]
+    
+    emojis[randomIndex] = temp
+
+}
+console.log(emojis)

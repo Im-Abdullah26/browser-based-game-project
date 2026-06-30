@@ -9,7 +9,7 @@ const emojis = [
     "⚽", "⚽",
     "🍕", "🍕"
 ]
-
+// -----------------------------------------------------------------
 
 const gameBoard = document.getElementById("game-board")
 
@@ -18,40 +18,52 @@ for (let i = 0; i < 16; i++) {
     const card = document.createElement("div")
 
     card.className = "card"
+
     card.id= i
     
     gameBoard.appendChild(card)
     
     card.addEventListener( "click", function(event){
+        
         card.style.backgroundColor= 'yellow'
+       
+       
         // gets the card's id
         console.log(event.target.id)
+
         // get the card element
         console.log(event.target)
+        
         event.target.textContent = emojis[event.target.id]
-        // card.textContent = emojis[i]
+        card.textContent = emojis[i]
     })
 
 
 }
 
+//  EITHER try to click again and remove the textContent
+// OR try to compare the textContent of two cards
 
 
-// for (let i = 0; i < 16; i++) { //suffle loop//
+// -------------------------shuffle loop------------------------------
 
-//     let random = Math.floor(Math.random() * 16)
+for (let i = 0; i < 16; i++) { 
 
-//     let temp = emojis[i]
+    let random = Math.floor(Math.random() * 16)
 
-//     emojis[i] = emojis[random]
+    let temp = emojis[i]
+
+    emojis[i] = emojis[random]
     
-//     emojis[random] = temp
+    emojis[random] = temp
 
 
-// }
-
-
+}
 console.log(emojis)
+
+
+// ----------------------------Timer----------------------------------
+
 
 let time = 30
 

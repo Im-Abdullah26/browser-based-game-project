@@ -12,7 +12,6 @@ const emojis = [
 // ---------------------------variables--------------------------------------
 let firstCard = null
 let secondCard = null
-let matches = 0
 
 // -------------------------shuffle loop------------------------------
 
@@ -56,12 +55,9 @@ card.addEventListener("click", function(){
 
     firstCard = card;
 
-    console.log("First card saved:", firstCard)
-
 } else {
 
     secondCard = card
-    console.log("second card saved", secondCard)
     
     if (firstCard.textContent === secondCard.textContent) {
 
@@ -72,6 +68,16 @@ card.addEventListener("click", function(){
 
     console.log("They don't match")
 
+setTimeout(function () {
+
+    firstCard.textContent = ""
+    secondCard.textContent = ""
+    firstCard.style.backgroundColor = "royalblue"
+    secondCard.style.backgroundColor = "royalblue"
+
+}, 1000)
+
+    
 }
     
 }

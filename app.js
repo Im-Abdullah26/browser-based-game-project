@@ -16,18 +16,18 @@ let matches = 0
 let canClick = true
 // -------------------------shuffle loop------------------------------
 
-// for (let i = 0; i < 16; i++) { 
+for (let i = 0; i < 16; i++) { 
 
-//     let random = Math.floor(Math.random() * 16)
+    let random = Math.floor(Math.random() * 16)
 
-//     let temp = emojis[i]
+    let temp = emojis[i]
 
-//     emojis[i] = emojis[random]
+    emojis[i] = emojis[random]
     
-//     emojis[random] = temp
-// }
+    emojis[random] = temp
+}
 
-// console.log(emojis)
+console.log(emojis)
 
 // ---------------------------------------------------------------
 

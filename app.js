@@ -59,10 +59,14 @@ card.addEventListener("click", function(){
 
     secondCard = card
     
-    if (firstCard.textContent === secondCard.textContent) {
+    if (firstCard.textContent === secondCard.textContent && firstCard.id !== secondCard.id) {
 
     
     console.log("They match")
+
+    firstCard = null
+    secondCard = null
+
 
 } else {
 
@@ -70,10 +74,13 @@ card.addEventListener("click", function(){
 
 setTimeout(function () {
 
-    firstCard.textContent = ""
-    secondCard.textContent = ""
+    firstCard.textContent =""
+    secondCard.textContent =""
     firstCard.style.backgroundColor = "royalblue"
     secondCard.style.backgroundColor = "royalblue"
+
+    firstCard = null
+    secondCard = null
 
 }, 1000)
 

@@ -1,9 +1,9 @@
 body {
     margin: 0;
     font-family: "Orbitron", sans-serif;
-    display: flex;           /*come back on this*/
-    flex-direction: column;  /*come back on this*/
-    align-items: center;     /*come back on this*/
+    display: flex;         
+    flex-direction: column;  
+    align-items: center;     
     
     background-image: url("images/background.jpg");
     background-size: cover;
@@ -22,7 +22,7 @@ h1 {
 #game-board {
     width: 400px;
     height: 400px;
-    margin: 20px auto; /*come back on this*/
+    margin: 20px auto; 
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* repeat (4,..) just means doing the same thing four times
                                             and 1fr just means it takes 1 fraction of the space
@@ -52,7 +52,7 @@ h1 {
 
 .card:hover {
     background-color: dodgerblue;
-    transform: scale(105%); /*come back on this*/
+    transform: scale(105%);
 }
 
 #message {

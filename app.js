@@ -1,32 +1,33 @@
 
 const emojis = [
-    "😀", "😀",
-    "😎", "😎",
-    "🍎", "🍎",
-    "⭐", "⭐",
-    "🐶", "🐶",
-    "🚗", "🚗",
-    "⚽", "⚽",
-    "🍕", "🍕"
+    "🚀","🚀",
+    "🪐","🪐",
+    "🌍","🌍",
+    "🌙","🌙",
+    "⭐","⭐",
+    "☄️","☄️",
+    "🛰️","🛰️",
+    "👨‍🚀","👨‍🚀"
 ]
 // ---------------------------variables--------------------------------------
 let firstCard = null
 let secondCard = null
 let matches = 0
+let canClick = true
 // -------------------------shuffle loop------------------------------
 
-for (let i = 0; i < 16; i++) { 
+// for (let i = 0; i < 16; i++) { 
 
-    let random = Math.floor(Math.random() * 16)
+//     let random = Math.floor(Math.random() * 16)
 
-    let temp = emojis[i]
+//     let temp = emojis[i]
 
-    emojis[i] = emojis[random]
+//     emojis[i] = emojis[random]
     
-    emojis[random] = temp
-}
+//     emojis[random] = temp
+// }
 
-console.log(emojis)
+// console.log(emojis)
 
 // ---------------------------------------------------------------
 
@@ -34,7 +35,15 @@ const message = document.getElementById("message")
 
 const gameBoard = document.getElementById("game-board")
 
+const restartButton = document.getElementById("restart-button")
 
+const timer = document.getElementById("timer")
+
+const popup = document.getElementById("popup")
+
+const popupTitle = document.getElementById("popup-title")
+
+const popupButton = document.getElementById("popup-button")
 
 // ------------------------Create the cards-----------------------
 
@@ -54,15 +63,21 @@ for (let i = 0; i < 16; i++) {
 
 card.addEventListener("click", function(){
 
-    card.style.backgroundColor= 'yellow'   
+if (canClick === false) {
+    return
+}
+
+    card.style.backgroundColor= 'darkblue'   
     card.textContent = emojis[i]
 
-    if (firstCard === null) { //If it's still null then this must be the player's first click
+    if (firstCard === null) {
 
     firstCard = card;
 
 } else {
-
+    if (firstCard === card) {
+    return
+    }
     secondCard = card
     
     if (firstCard.textContent === secondCard.textContent && firstCard.id !== secondCard.id) {
@@ -74,8 +89,11 @@ card.addEventListener("click", function(){
 
     if (matches === 8) {
 
-    message.textContent = "🎉 You Win!"
-    console.log("🎉 You Win!")
+    message.textContent = "🚀 Mission Complete!"
+    popup.style.display = "flex"
+    popupTitle.textContent = "🚀 Mission Complete!"
+  
+    clearInterval(runTimer)
 
 }
 
@@ -87,15 +105,19 @@ card.addEventListener("click", function(){
 
     console.log("They don't match")
 
+    canClick = false
+
 setTimeout(function () {
 
     firstCard.textContent =""
     secondCard.textContent =""
-    firstCard.style.backgroundColor = "royalblue"
-    secondCard.style.backgroundColor = "royalblue"
+    firstCard.style.backgroundColor = "#a5b1c1"
+    secondCard.style.backgroundColor = "#a5b1c1"
 
     firstCard = null
     secondCard = null
+
+    canClick = true
 
 }, 600)
 
@@ -109,21 +131,91 @@ setTimeout(function () {
 }
 
 
+
+// -------------------------restart-----------------------------------
+
+restartButton.addEventListener("click", function () {
+
+    popup.style.display = "none"
+
+    console.log("Restart button clicked!")
+
+    message.textContent = ""
+
+ matches = 0
+firstCard = null
+secondCard = null
+canClick = true
+ 
+
+
+for (let i = 0; i < 16; i++) {
+
+        let random = Math.floor(Math.random() * 16)
+
+        let temp = emojis[i]
+        emojis[i] = emojis[random]
+        emojis[random] = temp
+    }
+const cards = document.querySelectorAll(".card")
+
+    for (let i = 0; i < 16; i++) {
+
+        cards[i].textContent = ""
+        cards[i].style.backgroundColor = ""
+
+    }
+
+    startTimer();
+})
 // ----------------------------Timer----------------------------------
 
 
-let time = 30
+let time = 90;
+let runTimer;
 
-const runTimer = setInterval(function(){
-       
-    time = time - 1
-       
-        // console.log('time left: ', time)
-    }, 1000)
+function startTimer() {
 
-setTimeout(function() {
+    clearInterval(runTimer);
+
+    time = 90;
+    timer.textContent = time;
+
+runTimer = setInterval(function () {
+
+    time= time - 1
+
+ timer.textContent = time
+
+if (time <= 0) {
+
+    time = 0
+    timer.textContent = time
 
     clearInterval(runTimer)
-    console.log('Time is Up')
-}, 30000)
 
+    message.textContent = "⏰ Time's Up!"
+
+    popup.style.display = "flex"
+    popupTitle.textContent = "⏰ Time's Up!"
+
+    canClick = false
+
+   }
+
+    }, 1000)
+
+}
+
+startTimer();
+
+
+// -----------------------------------------------------------
+
+popupButton.addEventListener("click", function () {
+
+    popup.style.display = "none"
+    
+    restartButton.click()
+
+})

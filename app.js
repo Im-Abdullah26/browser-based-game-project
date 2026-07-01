@@ -12,7 +12,7 @@ const emojis = [
 // ---------------------------variables--------------------------------------
 let firstCard = null
 let secondCard = null
-
+let matches = 0
 // -------------------------shuffle loop------------------------------
 
 for (let i = 0; i < 16; i++) { 
@@ -28,10 +28,16 @@ for (let i = 0; i < 16; i++) {
 
 console.log(emojis)
 
+// ---------------------------------------------------------------
+
+const message = document.getElementById("message")
+
+const gameBoard = document.getElementById("game-board")
+
+
 
 // ------------------------Create the cards-----------------------
 
-const gameBoard = document.getElementById("game-board")
 
 for (let i = 0; i < 16; i++) {
 
@@ -64,6 +70,15 @@ card.addEventListener("click", function(){
     
     console.log("They match")
 
+    matches = matches + 1
+
+    if (matches === 8) {
+
+    message.textContent = "🎉 You Win!"
+    console.log("🎉 You Win!")
+
+}
+
     firstCard = null
     secondCard = null
 
@@ -82,7 +97,7 @@ setTimeout(function () {
     firstCard = null
     secondCard = null
 
-}, 1000)
+}, 600)
 
     
 }

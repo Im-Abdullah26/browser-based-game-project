@@ -43,7 +43,7 @@ Space Memory Mission is a fun memory matching game built using **HTML**, **CSS**
 
 ### Play the Game
 
-[Deployed Game Link](http://linktoyourgame.com)
+[Deployed Game Link](https://im-abdullah26.github.io/browser-based-game-project/)
 
 ---
 ### Installation
